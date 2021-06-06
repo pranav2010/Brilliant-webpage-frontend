@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Outline.css";
 
 function Outline() {
   const [readMore, setReadmore] = useState(false);
@@ -8,8 +9,8 @@ function Outline() {
   }
 
   return (
-    <div>
-      <div>
+    <div className="container">
+      <div className="content">
         <h1>Logic</h1>
         <h2>
           Stretch your analytic muscles with knights, knaves, logic gates, and
@@ -26,10 +27,10 @@ function Outline() {
             You'll use limited information to make predictions – eliminating the
             impossible to uncover the truth. This course builds up to some truly
             mind-bending challenges!
+            <button className="btn-readmore" onClick={handleReadmore}>
+              {!readMore && <span>Read more</span>}
+            </button>
           </p>
-          <button onClick={handleReadmore}>
-            {!readMore && <span>Read more</span>}
-          </button>
         </div>
 
         <div>
@@ -44,25 +45,37 @@ function Outline() {
               <div>
                 <h3>Topics covered</h3>
                 <ul>
-                    <li>Binary
-</li>
-                    <li>Truth Tables
-</li>
-                    <li>Logic Gates
-</li>
-                    <li>Venn and Euler Diagrams
-</li>
-                    <li>Propositional Logic
-</li>
-                    <li>The Square of Opposition</li>
-
+                  <li>Binary</li>
+                  <li>Truth Tables</li>
+                  <li>Logic Gates</li>
+                  <li>Venn and Euler Diagrams</li>
+                  <li>Propositional Logic</li>
+                  <li>The Square of Opposition</li>
                 </ul>
-
               </div>
-
             </div>
           )}
         </div>
+      </div>
+
+      <div className="card">
+        <div className="image">
+          <img
+            alt="course"
+            src="https://ds055uzetaobb.cloudfront.net/brioche/chapter/logic-HzWHci.png?width=254"
+          />
+        </div>
+        <div className="stats">
+          <div>
+            <p>Interactive quizzes</p>
+            <h3>37</h3>
+          </div>
+          <div>
+            <p>Concepts and exercises</p>
+            <h3>265+</h3>
+          </div>
+        </div>
+        <button>Start Course</button>
       </div>
     </div>
   );
